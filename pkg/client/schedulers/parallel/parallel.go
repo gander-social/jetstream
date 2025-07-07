@@ -7,8 +7,8 @@ import (
 	"log/slog"
 	"sync"
 
-	"github.com/bluesky-social/jetstream/pkg/client/schedulers"
-	"github.com/bluesky-social/jetstream/pkg/models"
+	"github.com/gander-social/jetstream/pkg/client/schedulers"
+	"github.com/gander-social/jetstream/pkg/models"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

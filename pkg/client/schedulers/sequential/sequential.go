@@ -4,8 +4,8 @@ import (
 	"context"
 	"log/slog"
 
-	"github.com/bluesky-social/jetstream/pkg/client/schedulers"
-	"github.com/bluesky-social/jetstream/pkg/models"
+	"github.com/gander-social/jetstream/pkg/client/schedulers"
+	"github.com/gander-social/jetstream/pkg/models"
 	"github.com/prometheus/client_golang/prometheus"
 )
 

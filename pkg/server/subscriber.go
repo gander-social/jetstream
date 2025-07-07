@@ -10,7 +10,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/bluesky-social/indigo/atproto/syntax"
+	"github.com/gander-social/gander-indigo-sovereign/atproto/syntax"
 	"github.com/gorilla/websocket"
 	"github.com/prometheus/client_golang/prometheus"
 	"golang.org/x/time/rate"

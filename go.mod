@@ -1,11 +1,11 @@
-module github.com/bluesky-social/jetstream
+module github.com/gander-social/jetstream
 
 go 1.22
 
 toolchain go1.22.3
 
 require (
-	github.com/bluesky-social/indigo v0.0.0-20240905024844-a4f38639767f
+	github.com/gander-social/gander-indigo-sovereign v0.0.0
 	github.com/cockroachdb/pebble v1.1.2
 	github.com/goccy/go-json v0.10.2
 	github.com/gorilla/websocket v1.5.1

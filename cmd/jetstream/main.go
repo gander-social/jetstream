@@ -14,10 +14,10 @@ import (
 	"syscall"
 	"time"
 
-	"github.com/bluesky-social/indigo/events"
-	"github.com/bluesky-social/indigo/events/schedulers/parallel"
-	"github.com/bluesky-social/jetstream/pkg/consumer"
-	"github.com/bluesky-social/jetstream/pkg/server"
+	"github.com/gander-social/gander-indigo-sovereign/events"
+	"github.com/gander-social/gander-indigo-sovereign/events/schedulers/parallel"
+	"github.com/gander-social/jetstream/pkg/consumer"
+	"github.com/gander-social/jetstream/pkg/server"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
@@ -37,7 +37,7 @@ func main() {
 		&cli.StringFlag{
 			Name:    "ws-url",
 			Usage:   "full websocket path to the ATProto SubscribeRepos XRPC endpoint",
-			Value:   "wss://bsky.network/xrpc/com.atproto.sync.subscribeRepos",
+			Value:   "wss://gndr.network/xrpc/com.atproto.sync.subscribeRepos",
 			EnvVars: []string{"JETSTREAM_WS_URL"},
 		},
 		&cli.IntFlag{

@@ -15,6 +15,8 @@ As of writing, there are 4 official public Jetstream instances operated by Blues
 | `jetstream1.us-west.bsky.network` | US-West |
 | `jetstream2.us-west.bsky.network` | US-West |
 
+TODO: Add Gander jetstream instances when available.
+
 Connect to these instances over WSS: `wss://jetstream2.us-west.bsky.network/subscribe`
 
 We will monitor and operate these instances and do our best to keep them available for public use by developers.
@@ -50,7 +52,7 @@ Connect to `ws://localhost:6008/subscribe` to start the stream
 The following Query Parameters are supported:
 
 - `wantedCollections` - An array of [Collection NSIDs](https://atproto.com/specs/nsid) to filter which records you receive on your stream (default empty = all collections)
-  - `wantedCollections` supports NSID path prefixes i.e. `app.bsky.graph.*`, or `app.bsky.*`. The prefix before the `.*` must pass NSID validation and Jetstream **does not** support incomplete prefixes i.e. `app.bsky.graph.fo*`.
+  - `wantedCollections` supports NSID path prefixes i.e. `app.gndr.graph.*`, or `app.gndr.*`. The prefix before the `.*` must pass NSID validation and Jetstream **does not** support incomplete prefixes i.e. `app.gndr.graph.fo*`.
   - Regardless of desired collections, all subscribers recieve Account and Identity events.
   - You can specify at most 100 wanted collections/prefixes.
 - `wantedDids` - An array of Repo DIDs to filter which records you receive on your stream (Default empty = all repos)
@@ -73,7 +75,7 @@ $ websocat wss://jetstream2.us-east.bsky.network/subscribe\?wantedCollections=ap
 A maximal example using all parameters looks like:
 
 ```bash
-$ websocat "ws://localhost:6008/subscribe?wantedCollections=app.bsky.feed.post&wantedCollections=app.bsky.feed.like&wantedCollections=app.bsky.graph.follow&wantedDids=did:plc:q6gjnaw2blty4crticxkmujt&cursor=1725519626134432"
+$ websocat "ws://localhost:6008/subscribe?wantedCollections=app.gndr.feed.post&wantedCollections=app.gndr.feed.like&wantedCollections=app.gndr.graph.follow&wantedDids=did:plc:q6gjnaw2blty4crticxkmujt&cursor=1725519626134432"
 ```
 
 ### Example events:
@@ -100,14 +102,14 @@ Jetstream Commits have 3 `operations`:
   "commit": {
     "rev": "3l3qo2vutsw2b",
     "operation": "create",
-    "collection": "app.bsky.feed.like",
+    "collection": "app.gndr.feed.like",
     "rkey": "3l3qo2vuowo2b",
     "record": {
-      "$type": "app.bsky.feed.like",
+      "$type": "app.gndr.feed.like",
       "createdAt": "2024-09-09T19:46:02.102Z",
       "subject": {
         "cid": "bafyreidc6sydkkbchcyg62v77wbhzvb2mvytlmsychqgwf2xojjtirmzj4",
-        "uri": "at://did:plc:wa7b35aakoll7hugkrjtf3xf/app.bsky.feed.post/3l3pte3p2e325"
+        "uri": "at://did:plc:wa7b35aakoll7hugkrjtf3xf/app.gndr.feed.post/3l3pte3p2e325"
       }
     },
     "cid": "bafyreidwaivazkwu67xztlmuobx35hs2lnfh3kolmgfmucldvhd3sgzcqi"
@@ -125,7 +127,7 @@ Jetstream Commits have 3 `operations`:
   "commit": {
     "rev": "3l3f6nzl3cv2s",
     "operation": "delete",
-    "collection": "app.bsky.graph.follow",
+    "collection": "app.gndr.graph.follow",
     "rkey": "3l3dn7tku762u"
   }
 }
@@ -218,7 +220,7 @@ An example Subscriber Sourced Message with an Options Update payload is as follo
 {
   "type": "options_update",
   "payload": {
-    "wantedCollections": ["app.bsky.feed.post"],
+    "wantedCollections": ["app.gndr.feed.post"],
     "wantedDids": ["did:plc:q6gjnaw2blty4crticxkmujt"],
     "maxMessageSizeBytes": 1000000
   }

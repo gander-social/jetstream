@@ -5,7 +5,7 @@ import (
 
 	_ "embed"
 
-	comatproto "github.com/bluesky-social/indigo/api/atproto"
+	comatproto "github.com/gander-social/gander-indigo-sovereign/api/atproto"
 )
 
 //go:embed zstd_dictionary

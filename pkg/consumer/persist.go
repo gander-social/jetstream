@@ -8,7 +8,7 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bluesky-social/jetstream/pkg/models"
+	"github.com/gander-social/jetstream/pkg/models"
 	"github.com/cockroachdb/pebble"
 	"github.com/goccy/go-json"
 	"github.com/labstack/gommon/log"

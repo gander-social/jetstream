@@ -11,8 +11,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/bluesky-social/jetstream/pkg/consumer"
-	"github.com/bluesky-social/jetstream/pkg/models"
+	"github.com/gander-social/jetstream/pkg/consumer"
+	"github.com/gander-social/jetstream/pkg/models"
 	"github.com/gorilla/websocket"
 	"github.com/labstack/echo/v4"
 	"go.opentelemetry.io/otel"

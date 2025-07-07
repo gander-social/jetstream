@@ -9,10 +9,10 @@ import (
 	"os"
 	"time"
 
-	apibsky "github.com/bluesky-social/indigo/api/bsky"
-	"github.com/bluesky-social/jetstream/pkg/client"
-	"github.com/bluesky-social/jetstream/pkg/client/schedulers/sequential"
-	"github.com/bluesky-social/jetstream/pkg/models"
+	apigndr "github.com/gander-social/gander-indigo-sovereign/api/gndr"
+	"github.com/gander-social/jetstream/pkg/client"
+	"github.com/gander-social/jetstream/pkg/client/schedulers/sequential"
+	"github.com/gander-social/jetstream/pkg/models"
 )
 
 const (
@@ -74,8 +74,8 @@ func (h *handler) HandleEvent(ctx context.Context, event *models.Event) error {
 	// Unmarshal the record if there is one
 	if event.Commit != nil && (event.Commit.Operation == models.CommitOperationCreate || event.Commit.Operation == models.CommitOperationUpdate) {
 		switch event.Commit.Collection {
-		case "app.bsky.feed.post":
-			var post apibsky.FeedPost
+		case "app.gndr.feed.post":
+			var post apigndr.FeedPost
 			if err := json.Unmarshal(event.Commit.Record, &post); err != nil {
 				return fmt.Errorf("failed to unmarshal post: %w", err)
 			}
